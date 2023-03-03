@@ -6,18 +6,19 @@
 
 
 {% block content %}
-<div class="p-5 mb-4 bg-light rounded-3">
-  <h1 class="display-4">My Site</h1>
-  <p class="lead">This is a simple Jumbotron component implemented with Bootstrap 5 classes.</p>
-  <hr class="my-4">
-  <p>Edit this to include your content.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="{% url 'about' %}" role="button">Learn more</a>
-  </p>
+<h1>all panels</h1>
+<div class="row">
+    {% for panel in all_panels %}
+    <div class="col-3">
+        <div class="shadow border"> <!-- Example HTML / CSS -->
+            <p>{{ panel.github_username }}</p>
+            <p>{{ panel.repo_name }}</p>
+            <p>{{ panel.panel_type }}</p>
+            <a href="/details/{{ panel.id }}/">Click for more</a>
+        </div>
+    </div>
+    {% endfor %}
 </div>
-
-<p>More stuff. {{ example_context_variable }}.</p>
-
 {% endblock content %}
 
 

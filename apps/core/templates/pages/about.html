@@ -6,9 +6,26 @@
 
 
 {% block content %}
-
-<p>Learn more about my site...</p>
-
+<embed type="image/svg+xml" src="{{ rendered_chart_svg_as_datauri|safe }}" />
+<table><thead><tr><th> Repo </th>
+       <th> Star gazer </th>
+       <th> Forks count </th>
+       <th> Created at </th>
+       <th> Size </th></tr></thead>
+<tbody>
+{% for repo in github_repos %}
+                <tr>
+                    <td>{{ repo.name }}</td>
+                    <td>{{ repo.stargazers_count }}</td>
+                    <td>{{ repo.forks_count }}</td>
+                    <td>{{ repo.created_at }}</td>
+                    <td>{{ repo.size }}</td>
+                </tr>
+               
+            {% endfor %}
+            </tbody>
+           
+            </table>
 {% endblock content %}
 
 

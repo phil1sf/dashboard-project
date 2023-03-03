@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    My Site - Home
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="shadow border"> <!-- Example HTML / CSS -->
+<p>{{ panel.github_username }}</p>
+<a href="/details/{{ panel.id }}/">Click for more</a>
+</div>
+
+
+{% endblock content %}
+
+
